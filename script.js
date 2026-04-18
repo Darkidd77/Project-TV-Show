@@ -32,12 +32,26 @@ function makePageForEpisodes(episodeList) {
     summaryElem.innerHTML = episode.summary || "No summary available.";
     summaryElem.className = "episode-summary";
 
-    episodeElem.appendChild(episodeElem);
+    episodeElem.appendChild(nameElem);
+    episodeElem.appendChild(seasonEpisodeElem);
+    episodeElem.appendChild(imageElem);
+    episodeElem.appendChild(summaryElem);
+
+    rootElem.appendChild(episodeElem);
   }
+
+  const sourceElem = document.createElement("a");
+  sourceElem.href = "https://api.tvmaze.com/";
+  sourceElem.target = "_blank";
+  sourceElem.textContent = "Data provided by TVMaze";
+  sourceElem.className = "source-link";
 
   const footerElem = document.createElement("footer");
   footerElem.textContent = "© 2024 TV Show Episodes";
   footerElem.className = "footer";
+
+  footerElem.appendChild(sourceElem);
+  rootElem.appendChild(footerElem);
 }
 
 window.onload = setup;
