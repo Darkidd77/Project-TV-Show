@@ -9,24 +9,12 @@
   </head>
 
   <body>
-    <header class="header-controls">
-      <div id="status-message"></div>
-
-      <nav aria-label="Episode controls">
-        <label for="episode-selector">Jump to episode: </label>
-        <select id="episode-selector">
-          <option value="all">-- Show all episodes --</option>
-        </select>
-
-        <label for="search-input">Search episodes: </label>
-        <input type="text" id="search-input" placeholder="Type to search..." />
-
-        <p id="episode-count"></p>
-      </nav>
-    </header>
-
     <div id="root"></div>
 
+    <!-- Loads a provided function called getAllEpisodes() which returns all episodes -->
+    <script src="episodes.js"></script>
+
+    <!-- Loads YOUR javascript code -->
     <script src="script.js"></script>
   </body>
 </html>
