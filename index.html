@@ -8,38 +8,44 @@
   </head>
 
   <body>
-    <div id="status-message"></div>
+    <main>
+      <div id="status-message" aria-live="polite"></div>
 
-    <div id="shows-view">
-      <header class="header-controls">
-        <h1>Shows Library</h1>
-        <input
-          type="text"
-          id="show-search-input"
-          placeholder="Search for a show (name, genre, summary)..."
-        />
-        <span id="show-search-count"></span>
-      </header>
-      <div id="shows-list" class="grid-container"></div>
-    </div>
+      <div id="shows-view">
+        <header class="header-controls">
+          <h1>Shows Library</h1>
+          <input
+            type="text"
+            id="show-search-input"
+            placeholder="Search for a show (name, genre, summary)..."
+            aria-label="Search all TV shows"
+          />
+          <span id="show-search-count"></span>
+        </header>
+        <div id="shows-list" class="grid-container"></div>
+      </div>
 
-    <div id="episodes-view" style="display: none">
-      <header class="header-controls">
-        <button id="back-to-shows-btn">⬅ Back to Shows</button>
+      <div id="episodes-view" style="display: none">
+        <header class="header-controls">
+          <button id="back-to-shows-btn" aria-label="Back to shows listing">
+            ⬅ Back to Shows
+          </button>
 
-        <select id="episode-selector">
-          <option value="all">All Episodes</option>
-        </select>
+          <select id="episode-selector" aria-label="Select a specific episode">
+            <option value="all">All Episodes</option>
+          </select>
 
-        <input
-          type="text"
-          id="episode-search-input"
-          placeholder="Search episodes..."
-        />
-        <span id="episode-search-count"></span>
-      </header>
-      <div id="episodes-list" class="grid-container"></div>
-    </div>
+          <input
+            type="text"
+            id="episode-search-input"
+            placeholder="Search episodes..."
+            aria-label="Search through episodes of this show"
+          />
+          <span id="episode-search-count"></span>
+        </header>
+        <div id="episodes-list" class="grid-container"></div>
+      </div>
+    </main>
 
     <script src="script.js"></script>
   </body>

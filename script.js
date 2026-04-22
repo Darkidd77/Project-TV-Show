@@ -98,6 +98,7 @@ function makePageForShows(showList) {
     image.src = show.image
       ? show.image.medium
       : "https://via.placeholder.com/210x295?text=No+Image";
+    image.alt = `Poster for the show ${show.name}`;
 
     const details = document.createElement("div");
     details.innerHTML = `

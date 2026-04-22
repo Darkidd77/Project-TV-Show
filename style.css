@@ -2,14 +2,14 @@
   --bg-deep: #0a0a0a;
   --bg-card: #161616;
   --blood-dark: #660000;
-  --blood-bright: #b30000;
   --blood-glow: rgba(179, 0, 0, 0.4);
-  --text-main: #e0e0e0;
-  --text-muted: #888888;
   --border-radius: 8px;
   --spacing-sm: 8px;
   --spacing-md: 16px;
   --spacing-lg: 24px;
+  --blood-bright: #ff3333;
+  --text-muted: #b0b0b0;
+  --text-main: #ffffff;
 }
 
 body {
