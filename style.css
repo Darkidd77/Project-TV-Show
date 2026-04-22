@@ -1,6 +1,3 @@
-/* =========================================
-   1. RESET & VARIABLES (Keep these at the top)
-   ========================================= */
 :root {
   --bg-deep: #0a0a0a;
   --bg-card: #161616;
@@ -23,21 +20,14 @@ body {
   padding: var(--spacing-lg);
 }
 
-/* =========================================
-   2. LAYOUT: The Grid
-   ========================================= */
 .grid-container {
   display: grid;
-  /* This creates the responsive layout automatically */
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: var(--spacing-lg);
   max-width: 1400px;
   margin: 0 auto;
 }
 
-/* =========================================
-   3. COMPONENTS: Show & Episode Cards
-   ========================================= */
 .show-card,
 .episode-card {
   background-color: var(--bg-card);
@@ -60,9 +50,8 @@ body {
   box-shadow: 0 10px 20px var(--blood-glow);
 }
 
-/* Style the clickable show title */
 .show-card h2 {
-  color: var(--blood-bright) !important; /* Forces the GoT vibe */
+  color: var(--blood-bright) !important;
   margin-bottom: var(--spacing-sm);
   text-decoration: underline;
   font-size: 1.5rem;
@@ -76,7 +65,6 @@ body {
   margin-bottom: var(--spacing-md);
 }
 
-/* Style the Genres/Status/Rating/Runtime section */
 .show-card div p {
   font-size: 0.85rem;
   color: var(--text-muted);
@@ -87,9 +75,6 @@ body {
   color: var(--text-main);
 }
 
-/* =========================================
-   4. NAVIGATION & CONTROLS
-   ========================================= */
 .header-controls {
   background-color: var(--bg-card);
   padding: var(--spacing-lg);
@@ -118,15 +103,27 @@ body {
 
 input[type="text"],
 select {
-  background-color: #222;
+  background-color: rgba(255, 255, 255, 0.05);
   color: white;
   border: 1px solid #444;
-  padding: 10px;
-  border-radius: 4px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: all 0.4s ease;
+  outline: none;
+}
+
+input[type="text"] {
+  min-width: 500px;
 }
 
 input[type="text"]:focus {
-  outline: none;
+  border-color: var(--blood-bright);
+  background: rgba(179, 0, 0, 0.05);
+  box-shadow: 0 0 15px var(--blood-glow);
+  min-width: 350px;
+}
+
+select:focus {
   border-color: var(--blood-bright);
 }
 
@@ -134,4 +131,40 @@ input[type="text"]:focus {
   text-align: center;
   font-weight: bold;
   margin-bottom: 10px;
+}
+
+img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.episode-summary,
+.show-summary {
+  height: 120px;
+  overflow-y: auto;
+  font-size: 0.9rem;
+  padding-right: 5px;
+  margin-top: var(--spacing-sm);
+}
+
+.episode-summary::-webkit-scrollbar {
+  width: 5px;
+}
+.episode-summary::-webkit-scrollbar-thumb {
+  background: var(--blood-dark);
+  border-radius: 10px;
+}
+
+#show-search-count,
+#episode-search-count {
+  background: var(--blood-dark);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  border: 1px solid var(--blood-bright);
+  box-shadow: 0 0 8px var(--blood-glow);
+  margin-left: 10px;
 }

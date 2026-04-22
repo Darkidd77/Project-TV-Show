@@ -109,6 +109,7 @@ function makePageForShows(showList) {
 
     const summary = document.createElement("div");
     summary.innerHTML = show.summary || "No summary available.";
+    summary.classList.add("show-summary");
 
     card.appendChild(title);
     card.appendChild(image);
