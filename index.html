@@ -3,18 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TV Show Project | Mahammad Osman (Darkidd77)</title>
+    <title>TV Show Dashboard</title>
     <link href="style.css" rel="stylesheet" />
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
   </head>
 
   <body>
-    <div id="root"></div>
+    <div id="status-message"></div>
 
-    <!-- Loads a provided function called getAllEpisodes() which returns all episodes -->
-    <script src="episodes.js"></script>
+    <div id="shows-view">
+      <header class="header-controls">
+        <h1>TV Show Database</h1>
+        <input
+          type="text"
+          id="show-search-input"
+          placeholder="Search for a show (name, genre, summary)..."
+        />
+        <span id="show-search-count"></span>
+      </header>
+      <div id="shows-list" class="grid-container"></div>
+    </div>
 
-    <!-- Loads YOUR javascript code -->
+    <div id="episodes-view" style="display: none">
+      <header class="header-controls">
+        <button id="back-to-shows-btn">⬅ Back to Shows</button>
+
+        <select id="episode-selector">
+          <option value="all">All Episodes</option>
+        </select>
+
+        <input
+          type="text"
+          id="episode-search-input"
+          placeholder="Search episodes..."
+        />
+        <span id="episode-search-count"></span>
+      </header>
+      <div id="episodes-list" class="grid-container"></div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>

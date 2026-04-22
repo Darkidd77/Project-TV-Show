@@ -1,3 +1,137 @@
-#root {
-  color: red;
+/* =========================================
+   1. RESET & VARIABLES (Keep these at the top)
+   ========================================= */
+:root {
+  --bg-deep: #0a0a0a;
+  --bg-card: #161616;
+  --blood-dark: #660000;
+  --blood-bright: #b30000;
+  --blood-glow: rgba(179, 0, 0, 0.4);
+  --text-main: #e0e0e0;
+  --text-muted: #888888;
+  --border-radius: 8px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+}
+
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--bg-deep);
+  color: var(--text-main);
+  line-height: 1.5;
+  padding: var(--spacing-lg);
+}
+
+/* =========================================
+   2. LAYOUT: The Grid
+   ========================================= */
+.grid-container {
+  display: grid;
+  /* This creates the responsive layout automatically */
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--spacing-lg);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   3. COMPONENTS: Show & Episode Cards
+   ========================================= */
+.show-card,
+.episode-card {
+  background-color: var(--bg-card);
+  border-radius: var(--border-radius);
+  border: 1px solid #222;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+  padding: var(--spacing-md);
+}
+
+.show-card:hover,
+.episode-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--blood-bright);
+  box-shadow: 0 10px 20px var(--blood-glow);
+}
+
+/* Style the clickable show title */
+.show-card h2 {
+  color: var(--blood-bright) !important; /* Forces the GoT vibe */
+  margin-bottom: var(--spacing-sm);
+  text-decoration: underline;
+  font-size: 1.5rem;
+}
+
+.show-card img,
+.episode-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: var(--spacing-md);
+}
+
+/* Style the Genres/Status/Rating/Runtime section */
+.show-card div p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.show-card div strong {
+  color: var(--text-main);
+}
+
+/* =========================================
+   4. NAVIGATION & CONTROLS
+   ========================================= */
+.header-controls {
+  background-color: var(--bg-card);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-lg);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  align-items: center;
+  border-bottom: 2px solid var(--blood-dark);
+}
+
+#back-to-shows-btn {
+  background-color: var(--blood-dark);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#back-to-shows-btn:hover {
+  background-color: var(--blood-bright);
+}
+
+input[type="text"],
+select {
+  background-color: #222;
+  color: white;
+  border: 1px solid #444;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: var(--blood-bright);
+}
+
+#status-message {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
