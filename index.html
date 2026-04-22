@@ -3,18 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TV Show Project | Mahammad Osman (Darkidd77)</title>
+    <title>Show Dashboard</title>
     <link href="style.css" rel="stylesheet" />
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
   </head>
 
   <body>
-    <div id="root"></div>
+    <main>
+      <div id="status-message" aria-live="polite"></div>
 
-    <!-- Loads a provided function called getAllEpisodes() which returns all episodes -->
-    <script src="episodes.js"></script>
+      <div id="shows-view">
+        <header class="header-controls">
+          <h1>Shows Library</h1>
+          <input
+            type="text"
+            id="show-search-input"
+            placeholder="Search for a show (name, genre, summary)..."
+            aria-label="Search all TV shows"
+          />
+          <span id="show-search-count"></span>
+        </header>
+        <div id="shows-list" class="grid-container"></div>
+      </div>
 
-    <!-- Loads YOUR javascript code -->
+      <div id="episodes-view" style="display: none">
+        <header class="header-controls">
+          <button id="back-to-shows-btn" aria-label="Back to shows listing">
+            ⬅ Back to Shows
+          </button>
+
+          <select id="episode-selector" aria-label="Select a specific episode">
+            <option value="all">All Episodes</option>
+          </select>
+
+          <input
+            type="text"
+            id="episode-search-input"
+            placeholder="Search episodes..."
+            aria-label="Search through episodes of this show"
+          />
+          <span id="episode-search-count"></span>
+        </header>
+        <div id="episodes-list" class="grid-container"></div>
+      </div>
+    </main>
+
     <script src="script.js"></script>
   </body>
 </html>

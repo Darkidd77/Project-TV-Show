@@ -1,3 +1,170 @@
-#root {
-  color: red;
+:root {
+  --bg-deep: #0a0a0a;
+  --bg-card: #161616;
+  --blood-dark: #660000;
+  --blood-glow: rgba(179, 0, 0, 0.4);
+  --border-radius: 8px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --blood-bright: #ff3333;
+  --text-muted: #b0b0b0;
+  --text-main: #ffffff;
+}
+
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--bg-deep);
+  color: var(--text-main);
+  line-height: 1.5;
+  padding: var(--spacing-lg);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--spacing-lg);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.show-card,
+.episode-card {
+  background-color: var(--bg-card);
+  border-radius: var(--border-radius);
+  border: 1px solid #222;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+  padding: var(--spacing-md);
+}
+
+.show-card:hover,
+.episode-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--blood-bright);
+  box-shadow: 0 10px 20px var(--blood-glow);
+}
+
+.show-card h2 {
+  color: var(--blood-bright) !important;
+  margin-bottom: var(--spacing-sm);
+  text-decoration: underline;
+  font-size: 1.5rem;
+}
+
+.show-card img,
+.episode-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: var(--spacing-md);
+}
+
+.show-card div p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.show-card div strong {
+  color: var(--text-main);
+}
+
+.header-controls {
+  background-color: var(--bg-card);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-lg);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  align-items: center;
+  border-bottom: 2px solid var(--blood-dark);
+}
+
+#back-to-shows-btn {
+  background-color: var(--blood-dark);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#back-to-shows-btn:hover {
+  background-color: var(--blood-bright);
+}
+
+input[type="text"],
+select {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: white;
+  border: 1px solid #444;
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: all 0.4s ease;
+  outline: none;
+}
+
+input[type="text"] {
+  min-width: 500px;
+}
+
+input[type="text"]:focus {
+  border-color: var(--blood-bright);
+  background: rgba(179, 0, 0, 0.05);
+  box-shadow: 0 0 15px var(--blood-glow);
+  min-width: 350px;
+}
+
+select:focus {
+  border-color: var(--blood-bright);
+}
+
+#status-message {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.episode-summary,
+.show-summary {
+  height: 120px;
+  overflow-y: auto;
+  font-size: 0.9rem;
+  padding-right: 5px;
+  margin-top: var(--spacing-sm);
+}
+
+.episode-summary::-webkit-scrollbar {
+  width: 5px;
+}
+.episode-summary::-webkit-scrollbar-thumb {
+  background: var(--blood-dark);
+  border-radius: 10px;
+}
+
+#show-search-count,
+#episode-search-count {
+  background: var(--blood-dark);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  border: 1px solid var(--blood-bright);
+  box-shadow: 0 0 8px var(--blood-glow);
+  margin-left: 10px;
 }
