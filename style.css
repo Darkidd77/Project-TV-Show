@@ -168,3 +168,14 @@ img {
   box-shadow: 0 0 8px var(--blood-glow);
   margin-left: 10px;
 }
+
+.tvmaze-attribution {
+  margin-left: auto; /* Pushes the text to the far right */
+  font-size: 0.75rem; /* Makes the font smaller */
+  color: var(--text-muted);
+}
+
+.tvmaze-attribution a {
+  color: var(--blood-bright);
+  text-decoration: none;
+}
